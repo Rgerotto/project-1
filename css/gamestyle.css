@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(183, 255, 255);
+    border-radius: 20px;
+}
+#game-board{
+    background-image: url('/img/home-alona-house.webp');
+    height: 500px;
+    width: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+/*GAME SECTION*/
+.cards-container{
+    height: 500px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.cards{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid rgba(232, 124, 2, 0.9);
+    height: 102px;
+    width: 103px;
+    margin: 10px;
+}
+
+/*SCORE SECTION*/
+
+.score{
+    width: 250px;
+    height: 500px;
+    background-color: white;
+    border-radius: 20px;
+}
+.score > h2{
+    text-align: center;
+    padding: 20px;
+}
