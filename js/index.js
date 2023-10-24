@@ -1,15 +1,11 @@
 const grid = document.querySelector('#game-board');
 
 const characters = [
-    { name: 'aquaman', img: 'aquaman.jpg' },
-    { name: 'batman', img: 'batman.jpg' },
-    { name: 'captain america', img: 'captain-america.jpg' },
-    { name: 'fantastic four', img: 'fantastic-four.jpg' },
-    { name: 'aquaman', img: 'aquaman.jpg' },
-    { name: 'batman', img: 'batman.jpg' },
-    { name: 'captain america', img: 'captain-america.jpg' },
-    { name: 'fantastic four', img: 'fantastic-four.jpg' },
-    { name: 'flash', img: 'flash.jpg' }
+    { name: 'javascript', img: 'javascript-1.svg' },
+    { name: 'ironhack', img: 'ironhack.png' },
+    { name: 'javascript', img: 'javascript-1.svg' },
+    { name: 'ironhack', img: 'ironhack.png' },
+    { name: 'ironhack', img: 'ironhack.png' }
 ];
 
 const createCard = (character) => {
@@ -24,60 +20,43 @@ const createCard = (character) => {
     const back = document.createElement('div');//creating a div with class="face back"
     back.className = 'face back';
 
+    back.setAttribute("data-name", character.name);//set the atribute to find the name of it object on array
+
     card.appendChild(front);
     card.appendChild(back);
     
-    /*CLICK SECTION & FLIP*/
-
-    document.querySelectorAll('.back').forEach((eachCard) => {
-        eachCard.addEventListener('click',() => {
-            eachCard.classList.add('front')
-            eachCard.classList.remove('back')  
-        });
-    });
+    
     return card;
 };
-        
-
 
 const loadGame = () => {
-    console.log(characters.length);
+    //DUPLICATED AND SHUFFLE
+    const duplicatecharacters = [...characters, ...characters];//duplicate the array
+    const shuffledArray = duplicatecharacters.sort(() => Math.random() - 0.3)//mix the cards on it game
+    shuffledArray.forEach((character) => {
+        const card = createCard(character);
+        grid.appendChild(card);
+      });
+
     characters.forEach((character) => {
         const card = createCard(character);
         grid.appendChild(card);
     });
+    //CLICK SECTION & FLIP
+    document.querySelectorAll('.back').forEach((eachCard) => { //select class BACK
+        eachCard.addEventListener('click',() => { //add click to work on it click with the mouse
+            eachCard.classList.add('front')//remove class front
+            eachCard.classList.remove('back') //add class back
+            console.log(eachCard.getAttribute("data-name"));
+
+            //try to upload the score
+            if(("data-name".name) === "javascript"){
+                //console.log(eachCard.getAttribute('data-name'))
+                return true
+            }
+
+        });
+    });
+    
 };
 loadGame()
-
-
-
-
-
-
-/*
-
-//SCORE 
-        let score = 50;
-            
-        //CARDS EMPTY 
-        //let firstCard = '';
-        //let secondCard = '';
-
-        //CHECKING CARDS 
-        const checkCards = () =>{
-            if(firstCard === 'robbers'){
-                score-=10;
-                if(secondCard === 'family'){
-                    score+=3;
-                };
-            };
-        });
-
-    document.querySelectorAll('.card').forEach(('card') => {
-        card.addEventListener('click',() => {
-            
-        })
-    })
-});
-const grid = document.querySelector('.cards-container');
-*/

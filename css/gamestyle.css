@@ -32,7 +32,6 @@ body{
 }
 /*GAME SECTION*/
 
-
 /*CARD SECTION*/
 .cards{
     aspect-ratio: 1/1;
@@ -52,10 +51,10 @@ body{
     position: absolute;
 }
 .back{
-    background-color: chocolate;
-    border: 2px solid red;
+    background-color: rgb(141, 141, 141);
 }
 .front{
+    transition: 1200ms ease-in-out;
     border-radius: 15px;
     border: none;
     background-repeat: no-repeat;
