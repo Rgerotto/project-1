@@ -1,11 +1,15 @@
 const grid = document.querySelector('#game-board');
-
+const points = document.querySelector('.result-of');
+let scoreNumber = 0;
 const characters = [
-    { name: 'javascript', img: 'javascript-1.svg' },
-    { name: 'ironhack', img: 'ironhack.png' },
-    { name: 'javascript', img: 'javascript-1.svg' },
-    { name: 'ironhack', img: 'ironhack.png' },
-    { name: 'ironhack', img: 'ironhack.png' }
+    { name: 'robbers', img: 'robbers.webp', quantity: 5},
+    { name: 'robbers1', img: 'robbers1.webp', quantity: 5 },
+    { name: 'robbers2', img: 'robbers2.webp', quantity: 5 },
+    { name: 'robbers3', img: 'robbers3.webp', quantity: 5 },
+    { name: 'robbers4', img: 'robbers4.webp', quantity: 5 },
+    { name: 'robbers5', img: 'robbers5.webp', quantity: 5 },
+    { name: 'family', img: 'mother-and-father.jpeg', quantity: -5 },
+    
 ];
 
 const createCard = (character) => {
@@ -19,9 +23,9 @@ const createCard = (character) => {
 
     const back = document.createElement('div');//creating a div with class="face back"
     back.className = 'face back';
-
+    back.setAttribute("quantity", character.quantity)//set the attribute to find the quantity
     back.setAttribute("data-name", character.name);//set the atribute to find the name of it object on array
-
+    console.log("quantity", character.quantity)
     card.appendChild(front);
     card.appendChild(back);
     
@@ -31,7 +35,7 @@ const createCard = (character) => {
 
 const loadGame = () => {
     //DUPLICATED AND SHUFFLE
-    const duplicatecharacters = [...characters, ...characters];//duplicate the array
+    const duplicatecharacters = [...characters];//duplicate the array
     const shuffledArray = duplicatecharacters.sort(() => Math.random() - 0.3)//mix the cards on it game
     shuffledArray.forEach((character) => {
         const card = createCard(character);
@@ -47,16 +51,37 @@ const loadGame = () => {
         eachCard.addEventListener('click',() => { //add click to work on it click with the mouse
             eachCard.classList.add('front')//remove class front
             eachCard.classList.remove('back') //add class back
-            console.log(eachCard.getAttribute("data-name"));
+            //console.log(eachCard.getAttribute("data-name"));
 
-            //try to upload the score
-            if(("data-name".name) === "javascript"){
-                //console.log(eachCard.getAttribute('data-name'))
-                return true
-            }
+            const result = eachCard.getAttribute("quantity");//creating variable to do SUM of the quantity
+            scoreNumber += Number(result);
+            points.innerText = scoreNumber;
+            endGame()
+            
+            console.log(eachCard);
 
+           
         });
     });
-    
+    //NEXT STEEP TO STOP THE GAME WITHOU ALERT
+    //SHOULD GO TO OTHER PAGE WITH KEVIN IMAGE SAYING
+    // NO.....NO.... YOU LOSE!!
+    const endGame = () => {
+        if (scoreNumber <= 10) {
+            return alert("Game Over!");
+        }
+    };
 };
 loadGame()
+
+//TO START GAME
+/*
+const TimeIn = setTimeout(timetoStart, 500)
+    function timeToStart(){
+        document.getElementsByTagName('body')
+    }
+
+*/
+
+
+

@@ -8,6 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1200ms ease-in-out;
 }/*GAME SECTION*/
 .container{
     width: 75%;
@@ -58,19 +59,20 @@ body{
     border-radius: 15px;
     border: none;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 
 
 
-/*SCORE SECTION
+/*SCORE SECTION*/
 
 .score{
     width: 250px;
     height: 500px;
-    background-color: white;
+    background-color: rgb(245, 186, 250);
     border-radius: 20px;
+    margin-left: 20px;
 }
 .score > h2{
     text-align: center;
