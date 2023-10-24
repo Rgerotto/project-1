@@ -56,8 +56,12 @@ body{
     border: 2px solid red;
 }
 .front{
-    background-color: yellow;
+    border-radius: 15px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
+
 
 
 
