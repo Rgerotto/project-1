@@ -1,32 +1,31 @@
 const grid = document.querySelector('#game-board');
-const points = document.querySelector('.result-of');
+const timer = document.querySelector('.time-of');
 const spanPlayer = document.querySelector('.player')
 let scoreNumber = 0;
 const characters = [
-    { name: 'robbers', img: 'robbers.webp', quantity: 0},
-    { name: 'robbers1', img: 'robbers1.webp', quantity: 0 },
-    { name: 'robbers2', img: 'robbers2.webp', quantity: 0 },
-    { name: 'robbers3', img: 'robbers3.webp', quantity: 0 },
-    { name: 'robbers4', img: 'robbers4.webp', quantity: 0 },
-    { name: 'robbers5', img: 'robbers5.webp', quantity: 0 },
-    { name: 'family', img: 'mother-and-father.jpeg', quantity: 0 },
-    { name: 'robbers', img: 'robbers.webp', quantity: 0},
-    { name: 'robbers1', img: 'robbers1.webp', quantity: 0 },
-    { name: 'robbers2', img: 'robbers2.webp', quantity: 0 },
-    { name: 'robbers3', img: 'robbers3.webp', quantity: 0 },
-    { name: 'robbers4', img: 'robbers4.webp', quantity: 0 },
-    { name: 'robbers5', img: 'robbers5.webp', quantity: 0 },
-    { name: 'family', img: 'mother-and-father.jpeg', quantity: 0 },
-    { name: 'kevin', img: 'kevin.webp', quantity: 10 },
+    { name: 'robbers', img: 'robbers.webp', quantity: 1},
+    { name: 'robbers1', img: 'robbers1.webp', quantity: 1 },
+    { name: 'robbers2', img: 'robbers2.webp', quantity: 1 },
+    { name: 'robbers3', img: 'robbers3.webp', quantity: 1 },
+    { name: 'robbers4', img: 'robbers4.webp', quantity: 1 },
+    { name: 'robbers5', img: 'robbers5.webp', quantity: 1 },
+    { name: 'family', img: 'mother-and-father.jpeg', quantity: 1 },
+    { name: 'robbers', img: 'robbers.webp', quantity: 1},
+    { name: 'robbers1', img: 'robbers1.webp', quantity: 1 },
+    { name: 'robbers2', img: 'robbers2.webp', quantity: 1 },
+    { name: 'robbers3', img: 'robbers3.webp', quantity: 1 },
+    { name: 'robbers4', img: 'robbers4.webp', quantity: 1 },
+    { name: 'robbers5', img: 'robbers5.webp', quantity: 1 },
+    { name: 'family', img: 'mother-and-father.jpeg', quantity: 1 },
+    { name: 'kevin', img: 'kevin.webp', quantity: 20 },
 
 ];
-
 
 
 const createCard = (character) => {
     
     const card = document.createElement('div'); // creating a div with class="card"
-    card.classname = 'cards';
+    card.className = 'cards';
     
     const front = document.createElement('div');//creating a div with class="face front"
     front.className = 'face front';
@@ -36,16 +35,13 @@ const createCard = (character) => {
     back.className = 'face back';
     back.setAttribute("quantity", character.quantity)//set the attribute to find the quantity
     back.setAttribute("data-name", character.name);//set the atribute to find the name of it object on array
-    console.log("quantity", character.quantity)
+    //console.log("quantity", character.quantity)
     card.appendChild(front);
     card.appendChild(back);
     
     
     return card;
 };
-
-/* const newObject = { name: 'kevin', img: 'kevin.webp', quantity: -5 };
-characters.push(newObject); */
 
 const loadGame = () => {
     //DUPLICATED AND SHUFFLE
@@ -55,64 +51,62 @@ const loadGame = () => {
         const card = createCard(character);
         grid.appendChild(card);
     });
-
-    /* characters.forEach((character) => {
-        const card = createCard(character);
-        grid.appendChild(card);
-    }); */
     
     const timeOut = setTimeout(() => {
         document.querySelectorAll('.back').forEach((eachCard) => {
             eachCard.classList.remove('back')
             eachCard.classList.add('front')
         })
-    },2000)
+    },700)
     
     const TimeIn = setTimeout(() => {
         document.querySelectorAll('.front').forEach((eachCard) => {
             eachCard.classList.add('back')
             eachCard.classList.remove('front')
         })
-    },5000)
-    
-    
-    /* ADD UNDER HERE WAY OF TO DO NOT DISPLAY KEVIN DUPLICATED */
-    
-    
+    },1500)
+
     //CLICK SECTION & FLIP
     document.querySelectorAll('.back').forEach((eachCard) => { //select class BACK
         eachCard.addEventListener('click',() => { //add click to work on it click with the mouse
             eachCard.classList.add('front')//remove class front
             eachCard.classList.remove('back') //add class back
-            //console.log(eachCard.getAttribute("data-name"));
-            
             
             const result = eachCard.getAttribute("quantity");//creating variable to do SUM of the quantity
-            scoreNumber += Number(result);
-            points.innerText = scoreNumber;
-            endGame()
-            
-           
+            scoreNumber += result;
+            //console.log(result);
         });
     });
+    
+    
     //NEXT STEEP TO STOP THE GAME WITHOU ALERT
     //SHOULD GO TO OTHER PAGE WITH KEVIN IMAGE SAYING
     // NO.....NO.... YOU LOSE!!
-    const endGame = () => {
-        if (scoreNumber === 10) {
-            return alert("Game Over!");
-        }
-    };
-};
+    
+    //trying to set a time to finish
+    
+}
+
+const startTimer = () => {
+    this.loopInterval = setInterval(() => {
+        const currentTime = Number(timer.innerHTML);
+        timer.innerHTML = currentTime + 1;
+    }, 1000)
+}
+const endGame = () => {
+    clearInterval (this.loopInterval)
+
+}
+const checkCard = () => {
+    if(scoreNumber === 20){
+        alert('congrats')
+        endGame()
+    }
+}
 
 window.onload = () => {
     const playerName = localStorage.getItem('palyer');
     spanPlayer.innerHTML = playerName;
+    startTimer();
+    loadGame();
 }
-
-
-loadGame()
-
-
-
-

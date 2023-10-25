@@ -15,10 +15,14 @@ body{
     flex-direction: column;
     font-family: 'Henny Penny', sans-serif;
 }
-
+div{
+    width: 120px;
+    height: 120px;
+    margin: 0;
+}
 /*GAME SECTION*/
 .menu{
-    margin: 30px 0;
+    margin: 15px 0;
     display: flex;
     justify-content: space-around;
     width: 80%;
@@ -34,37 +38,19 @@ body{
     background-size: cover;
     background-position: center;
 }
-.menu-face > p{
-    color: aliceblue;
-}
 /*DISPLAY CARDS*/
-.robber{
-    background-image: url('/img/robbers.webp');
-}
-.robber-one{
-    background-image: url('/img/robbers1.webp');
-}
-.robber-two{
-    background-image: url('/img/robbers2.webp');
-}
-.robber-three{
-    background-image: url('/img/robbers3.webp');
-}
-.robber-four{
-    background-image: url('/img/robbers4.webp');
-}
-.robber-five{
-    background-image: url('/img/robbers5.webp');
-}
-.family{
-    background-image: url('/img/mother-and-father.jpeg');
+p{
+    color: white;
+    letter-spacing: 3px;
+    width: 90%;
+    padding: 5px 0;
 }
 /*DISPLAY CARDS*/
 #game-board{
     height: 700px;
     width: 100%;
     max-width: 800px;
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
 }
@@ -74,7 +60,7 @@ body{
 .cards{
     aspect-ratio: 1/1;
     width: 100%;
-    transition: all 200ms;
+    transition: all 20ms;
     transform-style: preserve-3d;
     position: relative;
 }
@@ -95,36 +81,45 @@ height: 100px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    align-items: center;
 }
 .back{
     background-color: rgb(141, 141, 141);
 }
 .front{
-    transition: 1200ms ease-in-out;
+    transition: 20ms ease-in-out;
 }
 
 
 
 
 /*SCORE SECTION*/
+.container-button{
+    height: 50px;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    
+}
+.button{
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px #bcbcbc;
+    font-family: 'Henny Penny', sans-serif;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
 
 .score{
     width: 90%;
-    height: 250px;
+    height: 200px;
     background-color: rgba(192, 192, 192, 0.3);
     border: 2px solid rgba(192, 192, 192, 0.7);
     border-radius: 20px;
-    margin: 10px 0;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
+    padding: 40px 10px;
+    margin-bottom: 20px;
 }
-.score > h2{
-    text-align: left;
-}
-.score > p{
-    font-size: 20px;
-    text-align: left;
-
-}
-/*SCORE SECTION*/

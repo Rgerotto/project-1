@@ -7,22 +7,33 @@
       href="https://fonts.googleapis.com/css?family=Henny Penny"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Game Home Alone</title>
   </head>
   <body>
     <h1>Let's start the gamne</h1>
-    <form class="login-form">
-      <div class="login-header">
-        <input
-          type="text"
-          name="name"
-          class="login-input"
-          placeholder="Your name here!"
-        />
-        <button type="submit" class="login-button" disabled>Play</button>
-      </div>
-    </form>
+    <div class="container">
+      <form class="login-form">
+        <div class="login-header">
+          <input
+            type="text"
+            name="name"
+            class="login-input"
+            placeholder="Your name here!"
+          />
+          <button type="submit" class="login-button" disabled>
+            <i class="fa-solid fa-gamepad"></i><span>Play</span>
+          </button>
+        </div>
+      </form>
+    </div>
     <script defer src="/js/login.js"></script>
   </body>
 </html>
