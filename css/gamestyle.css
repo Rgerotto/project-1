@@ -79,7 +79,13 @@ body{
     position: relative;
 }
 /*CARD SECTION*/
-
+#special{
+background-image: url('/img/kevin.webp');
+background-position: center;
+background-size: cover;
+width: 100px;
+height: 100px;
+}
 .face{
     width: 100px;
     height: 100px;
