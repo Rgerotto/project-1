@@ -10,7 +10,9 @@ const characters = [
     { name: 'robbers4', img: 'robbers4.webp', quantity: 5 },
     { name: 'robbers5', img: 'robbers5.webp', quantity: 5 },
     { name: 'family', img: 'mother-and-father.jpeg', quantity: -5 },
+    /* { name: 'kevin', img: 'kevin.webp', quantity: -5 } */
 ];
+
 
 const createCard = (character) => {
 
@@ -36,7 +38,7 @@ const createCard = (character) => {
 const loadGame = () => {
     //DUPLICATED AND SHUFFLE
     const duplicatecharacters = [...characters];//duplicate the array
-    const shuffledArray = duplicatecharacters.sort(() => Math.random() - 0.3)//mix the cards on it game
+    const shuffledArray = duplicatecharacters.sort(() => Math.random() - 0.9)//mix the cards on it game
     shuffledArray.forEach((character) => {
         const card = createCard(character);
         grid.appendChild(card);
@@ -60,6 +62,8 @@ const loadGame = () => {
             eachCard.classList.remove('front')
         })
     },5000)
+
+    
 
 
     //CLICK SECTION & FLIP
