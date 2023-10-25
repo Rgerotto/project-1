@@ -1,5 +1,6 @@
 const grid = document.querySelector('#game-board');
 const points = document.querySelector('.result-of');
+const spanPlayer = document.querySelector('.player')
 let scoreNumber = 0;
 const characters = [
     { name: 'robbers', img: 'robbers.webp', quantity: 5},
@@ -9,7 +10,6 @@ const characters = [
     { name: 'robbers4', img: 'robbers4.webp', quantity: 5 },
     { name: 'robbers5', img: 'robbers5.webp', quantity: 5 },
     { name: 'family', img: 'mother-and-father.jpeg', quantity: -5 },
-    
 ];
 
 const createCard = (character) => {
@@ -46,20 +46,35 @@ const loadGame = () => {
         const card = createCard(character);
         grid.appendChild(card);
     });
+
+    const timeOut = setTimeout(() => {
+        document.querySelectorAll('.back').forEach((eachCard) => {
+            eachCard.classList.remove('back')
+            eachCard.classList.add('front')
+        })
+    },2000)
+
+    const TimeIn = setTimeout(() => {
+        document.querySelectorAll('.front').forEach((eachCard) => {
+            eachCard.classList.add('back')
+            eachCard.classList.remove('front')
+        })
+    },5000)
+
+
     //CLICK SECTION & FLIP
     document.querySelectorAll('.back').forEach((eachCard) => { //select class BACK
         eachCard.addEventListener('click',() => { //add click to work on it click with the mouse
             eachCard.classList.add('front')//remove class front
             eachCard.classList.remove('back') //add class back
             //console.log(eachCard.getAttribute("data-name"));
-
+            
+            
             const result = eachCard.getAttribute("quantity");//creating variable to do SUM of the quantity
             scoreNumber += Number(result);
             points.innerText = scoreNumber;
             endGame()
             
-            console.log(eachCard);
-
            
         });
     });
@@ -67,11 +82,18 @@ const loadGame = () => {
     //SHOULD GO TO OTHER PAGE WITH KEVIN IMAGE SAYING
     // NO.....NO.... YOU LOSE!!
     const endGame = () => {
-        if (scoreNumber <= 10) {
-            return alert("Game Over!");
+        if (scoreNumber === 20) {
+            //return alert("Game Over!");
         }
     };
 };
+
+window.onload = () => {
+    const playerName = localStorage.getItem('palyer');
+    spanPlayer.innerHTML = playerName;
+}
+
+
 loadGame()
 
 //TO START GAME

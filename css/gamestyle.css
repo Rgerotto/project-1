@@ -8,28 +8,64 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1200ms ease-in-out;
-}/*GAME SECTION*/
-.container{
-    width: 75%;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    background-color: rgb(183, 255, 255);
-    border-radius: 20px;
-}
-
-#game-board{
     background-image: url('/img/home-alona-house.webp');
-    height: 500px;
-    width: 100%;
-    max-width: 800px;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px;
+    flex-direction: column;
+
+}
+
+/*GAME SECTION*/
+.menu{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    height: 100px;
+    background-color: rgba(192, 192, 192, 0.1);
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.menu-face{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+}
+.menu-face > p{
+    color: aliceblue;
+}
+/*DISPLAY CARDS*/
+.robber{
+    background-image: url('/img/robbers.webp');
+}
+.robber-one{
+    background-image: url('/img/robbers1.webp');
+}
+.robber-two{
+    background-image: url('/img/robbers2.webp');
+}
+.robber-three{
+    background-image: url('/img/robbers3.webp');
+}
+.robber-four{
+    background-image: url('/img/robbers4.webp');
+}
+.robber-five{
+    background-image: url('/img/robbers5.webp');
+}
+.family{
+    background-image: url('/img/mother-and-father.jpeg');
+}
+/*DISPLAY CARDS*/
+#game-board{
+    height: 700px;
+    width: 100%;
+    max-width: 800px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
 }
 /*GAME SECTION*/
 
@@ -46,20 +82,18 @@ body{
 .face{
     width: 100px;
     height: 100px;
-    border-radius: 15px;
-    margin: 10px;
+    border-radius: 7px;
     cursor: pointer;
     position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .back{
     background-color: rgb(141, 141, 141);
 }
 .front{
     transition: 1200ms ease-in-out;
-    border-radius: 15px;
-    border: none;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 
@@ -68,19 +102,22 @@ body{
 /*SCORE SECTION*/
 
 .score{
-    width: 250px;
-    height: 500px;
-    background-color: rgb(245, 186, 250);
+    width: 90%;
+    height: 250px;
+    background-color: rgba(192, 192, 192, 0.3);
+    border: 2px solid rgba(192, 192, 192, 0.7);
     border-radius: 20px;
-    margin-left: 20px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
 .score > h2{
-    text-align: center;
-    padding: 20px;
-
+    text-align: left;
 }
 .score > p{
     font-size: 20px;
-    text-align: center;
+    text-align: left;
+
 }
 /*SCORE SECTION*/

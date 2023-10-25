@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -6,23 +7,43 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(2, 1, 0);
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-.game-start{
-    width: 850px;
-    height: 500px;
     background-image: url('/img/Mccallister-family.webp');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+}
+.login-form{
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-content: center;
 }
 h1{
-    color: blue;
+    font-size: 90px;
+    font-family: 'Henny Penny', sans-serif;
+    color: white;
+}
+.login-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.login-input{
+    font-family: 'Henny Penny', sans-serif;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    width: 200px;
+}
+.login-button{
+    font-family: 'Henny Penny', sans-serif;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 900;
+    width: 200px;
+    cursor: pointer;
 }
