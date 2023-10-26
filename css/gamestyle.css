@@ -63,6 +63,7 @@ p{
     transition: all 20ms;
     transform-style: preserve-3d;
     position: relative;
+    
 }
 /*CARD SECTION*/
 #special{
@@ -82,6 +83,7 @@ height: 100px;
     background-repeat: no-repeat;
     background-position: center;
     align-items: center;
+    box-shadow: 1px 1px 15px #bcbcbc;
 }
 .back{
     background-color: rgb(141, 141, 141);
@@ -117,18 +119,12 @@ height: 100px;
 .score{
     width: 90%;
     height: 200px;
-    background-color: rgba(192, 192, 192, 0.3);
-    border: 2px solid rgba(192, 192, 192, 0.7);
-    border-radius: 20px;
-    padding: 10px 10px;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
 }
 span{
     margin: 0 5px;
-    font-size: 20px;
-}
-.player{
-    color: black;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px #bcbcbc;
 }
