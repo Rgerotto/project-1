@@ -1,9 +1,10 @@
+
 const grid = document.querySelector('#game-board');
 const timer = document.querySelector('.time-of');
 const startGame = document.querySelector('.button');
 let scoreNumber = 0;
 let loopInterval;
-
+const backgroundMusic = new Audio("../audio/audio-game.mp3")
 
 const characters = [
     { name: 'robbers', img: 'robbers.webp', quantity: 1},
@@ -23,7 +24,7 @@ const characters = [
     { name: 'kevin', img: 'kevin.webp', quantity: 20 },
 
 ];
-console.log(characters.length)
+
 const createCard = (character) => {
     
     const card = document.createElement('div'); // creating a div with class="card"
@@ -48,6 +49,7 @@ const createCard = (character) => {
 
 
 const loadGame = () => {
+
     //DUPLICATED AND SHUFFLE
     const duplicatedArray = [...characters];//duplicate the array
     const shuffledArray = duplicatedArray.sort(() => Math.random() - 0.5)//mix the cards on it game
@@ -96,15 +98,16 @@ const loadGame = () => {
 }
 
 startGame.addEventListener('click',() => {
+    backgroundMusic.play()
     const startTimer = () => {
         loopInterval = setInterval(() => {
             const currentTime = Number(timer.innerHTML);
             timer.innerHTML = currentTime + 1;
-        }, 1000)
+        }, 100)
     }
         startTimer()
     });
+
     
-    
-    
+        
         loadGame();
