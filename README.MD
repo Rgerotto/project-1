@@ -4,7 +4,6 @@ Home Alone
 
 ## My projec idea
 
-![alt text] (project game.png)
 add img here
 
 ## Backlog
