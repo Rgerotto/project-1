@@ -1,7 +1,10 @@
 const grid = document.querySelector('#game-board');
 const timer = document.querySelector('.time-of');
 const spanPlayer = document.querySelector('.player')
-let scoreNumber = 0;
+let scoreNumber = '';
+let loopInterval;
+
+
 const characters = [
     { name: 'robbers', img: 'robbers.webp', quantity: 1},
     { name: 'robbers1', img: 'robbers1.webp', quantity: 1 },
@@ -20,8 +23,7 @@ const characters = [
     { name: 'kevin', img: 'kevin.webp', quantity: 20 },
 
 ];
-
-
+console.log(characters.length)
 const createCard = (character) => {
     
     const card = document.createElement('div'); // creating a div with class="card"
@@ -42,6 +44,8 @@ const createCard = (character) => {
     
     return card;
 };
+
+
 
 const loadGame = () => {
     //DUPLICATED AND SHUFFLE
@@ -74,7 +78,11 @@ const loadGame = () => {
             
             const result = eachCard.getAttribute("quantity");//creating variable to do SUM of the quantity
             scoreNumber += result;
-            //console.log(result);
+            console.log(result);
+            if(scoreNumber === 20){
+                clearInterval (loopInterval)
+                return alert(`congrats!!`);   
+            }
         });
     });
     
@@ -86,27 +94,19 @@ const loadGame = () => {
     //trying to set a time to finish
     
 }
-
+console.log(scoreNumber);
+//timer start when page load
 const startTimer = () => {
-    this.loopInterval = setInterval(() => {
+   loopInterval = setInterval(() => {
         const currentTime = Number(timer.innerHTML);
         timer.innerHTML = currentTime + 1;
     }, 1000)
 }
-const endGame = () => {
-    clearInterval (this.loopInterval)
+startTimer()
 
-}
-const checkCard = () => {
-    if(scoreNumber === 20){
-        alert('congrats')
-        endGame()
-    }
-}
 
 window.onload = () => {
     const playerName = localStorage.getItem('palyer');
     spanPlayer.innerHTML = playerName;
-    startTimer();
     loadGame();
 }
