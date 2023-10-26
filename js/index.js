@@ -1,6 +1,7 @@
 const grid = document.querySelector('#game-board');
 const timer = document.querySelector('.time-of');
-const spanPlayer = document.querySelector('.player')
+const spanPlayer = document.querySelector('.player');
+const startGame = document.querySelector('.button');
 let scoreNumber = 0;
 let loopInterval;
 
@@ -87,23 +88,18 @@ const loadGame = () => {
     });
     
     
-    //NEXT STEEP TO STOP THE GAME WITHOU ALERT
-    //SHOULD GO TO OTHER PAGE WITH KEVIN IMAGE SAYING
-    // NO.....NO.... YOU LOSE!!
-    
-    //trying to set a time to finish
     
 }
-//console.log(scoreNumber);
-//timer start when page load
-
-const startTimer = () => {
-   loopInterval = setInterval(() => {
-        const currentTime = Number(timer.innerHTML);
-        timer.innerHTML = currentTime + 1;
-    }, 1000)
-}
-startTimer()
+ 
+        startGame.addEventListener('click',() => {
+        const startTimer = () => {
+           loopInterval = setInterval(() => {
+                const currentTime = Number(timer.innerHTML);
+                timer.innerHTML = currentTime + 1;
+            }, 1000)
+        }
+        startTimer()
+    });
 
 
 window.onload = () => {
