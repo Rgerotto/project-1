@@ -8,7 +8,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/img/home-alona-house.webp');
+    background-image: url('/img/house.png');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px;
@@ -67,7 +67,6 @@ p{
 }
 /*CARD SECTION*/
 #special{
-background-image: url('/img/kevin.webp');
 background-position: center;
 background-size: cover;
 width: 100px;

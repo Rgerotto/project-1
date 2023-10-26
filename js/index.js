@@ -6,21 +6,21 @@ let loopInterval;
 const backgroundMusic = new Audio("../audio/homealone-audio.mp3");
 
 const characters = [
-  { name: "robbers", img: "robbers.webp", quantity: 1 },
-  { name: "robbers1", img: "robbers1.webp", quantity: 1 },
-  { name: "robbers2", img: "robbers2.webp", quantity: 1 },
-  { name: "robbers3", img: "robbers3.webp", quantity: 1 },
-  { name: "robbers4", img: "robbers4.webp", quantity: 1 },
-  { name: "robbers5", img: "robbers5.webp", quantity: 1 },
+  { name: "robbers", img: "robbers.png", quantity: 1 },
+  { name: "robbers1", img: "robbers1.png", quantity: 1 },
+  { name: "robbers2", img: "robbers2.png", quantity: 1 },
+  { name: "robbers3", img: "robbers3.png", quantity: 1 },
+  { name: "robbers4", img: "robbers4.png", quantity: 1 },
+  { name: "robbers5", img: "robbers5.png", quantity: 1 },
   { name: "family", img: "mother-and-father.jpeg", quantity: 1 },
-  { name: "robbers", img: "robbers.webp", quantity: 1 },
-  { name: "robbers1", img: "robbers1.webp", quantity: 1 },
-  { name: "robbers2", img: "robbers2.webp", quantity: 1 },
-  { name: "robbers3", img: "robbers3.webp", quantity: 1 },
-  { name: "robbers4", img: "robbers4.webp", quantity: 1 },
-  { name: "robbers5", img: "robbers5.webp", quantity: 1 },
+  { name: "robbers", img: "robbers.png", quantity: 1 },
+  { name: "robbers1", img: "robbers1.png", quantity: 1 },
+  { name: "robbers2", img: "robbers2.png", quantity: 1 },
+  { name: "robbers3", img: "robbers3.png", quantity: 1 },
+  { name: "robbers4", img: "robbers4.png", quantity: 1 },
+  { name: "robbers5", img: "robbers5.png", quantity: 1 },
   { name: "family", img: "mother-and-father.jpeg", quantity: 1 },
-  { name: "kevin", img: "kevin.webp", quantity: 20 },
+  { name: "kevin", img: "kevin-to-png.png", quantity: 20 },
 ];
 
 const createCard = (character) => {

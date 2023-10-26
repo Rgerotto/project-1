@@ -7,7 +7,7 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-image: url('./img/Mccallister-family.webp');
+    background-image: url('/img/family.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -25,6 +25,7 @@ h1{
     font-family: 'Henny Penny', sans-serif;
     color: white;
     text-shadow: 2px 2px #bcbcbc;
+    margin-top: 20px;
 }
 .login-header{
     display: flex;
