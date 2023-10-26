@@ -1,7 +1,7 @@
 const grid = document.querySelector('#game-board');
 const timer = document.querySelector('.time-of');
 const spanPlayer = document.querySelector('.player')
-let scoreNumber = '';
+let scoreNumber = 0;
 let loopInterval;
 
 
@@ -79,7 +79,7 @@ const loadGame = () => {
             const result = eachCard.getAttribute("quantity");//creating variable to do SUM of the quantity
             scoreNumber += result;
             console.log(result);
-            if(scoreNumber === 20){
+            if(scoreNumber >= 20){
                 clearInterval (loopInterval)
                 return alert(`congrats!!`);   
             }
@@ -94,8 +94,9 @@ const loadGame = () => {
     //trying to set a time to finish
     
 }
-console.log(scoreNumber);
+//console.log(scoreNumber);
 //timer start when page load
+
 const startTimer = () => {
    loopInterval = setInterval(() => {
         const currentTime = Number(timer.innerHTML);
