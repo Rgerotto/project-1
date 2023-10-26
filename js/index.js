@@ -62,7 +62,7 @@ const loadGame = () => {
             eachCard.classList.add('front')
         })
     },700)
-    
+    //teste
     const TimeIn = setTimeout(() => {
         document.querySelectorAll('.front').forEach((eachCard) => {
             eachCard.classList.add('back')
