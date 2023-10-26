@@ -1,6 +1,5 @@
 const grid = document.querySelector('#game-board');
 const timer = document.querySelector('.time-of');
-const spanPlayer = document.querySelector('.player');
 const startGame = document.querySelector('.button');
 let scoreNumber = 0;
 let loopInterval;
@@ -69,7 +68,7 @@ const loadGame = () => {
             eachCard.classList.add('back')
             eachCard.classList.remove('front')
         })
-    },1500)
+    },1000)
 
     //CLICK SECTION & FLIP
     document.querySelectorAll('.back').forEach((eachCard) => { //select class BACK
@@ -78,11 +77,16 @@ const loadGame = () => {
             eachCard.classList.remove('back') //add class back
             
             const result = eachCard.getAttribute("quantity");//creating variable to do SUM of the quantity
+            scoreNumber = Number(result)
             scoreNumber += result;
-            console.log(result);
+            console.log(scoreNumber);
             if(scoreNumber >= 20){
                 clearInterval (loopInterval)
-                return alert(`congrats!!`);   
+                function redirect() {
+                    window.location.href = '/pages/finish-game.html';
+                }
+                redirect()
+                return;   
             }
         });
     });
@@ -90,20 +94,17 @@ const loadGame = () => {
     
     
 }
- 
-        startGame.addEventListener('click',() => {
-        const startTimer = () => {
-           loopInterval = setInterval(() => {
-                const currentTime = Number(timer.innerHTML);
-                timer.innerHTML = currentTime + 1;
-            }, 1000)
-        }
+
+startGame.addEventListener('click',() => {
+    const startTimer = () => {
+        loopInterval = setInterval(() => {
+            const currentTime = Number(timer.innerHTML);
+            timer.innerHTML = currentTime + 1;
+        }, 1000)
+    }
         startTimer()
     });
-
-
-window.onload = () => {
-    const playerName = localStorage.getItem('palyer');
-    spanPlayer.innerHTML = playerName;
-    loadGame();
-}
+    
+    
+    
+        loadGame();

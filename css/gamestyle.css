@@ -120,6 +120,15 @@ height: 100px;
     background-color: rgba(192, 192, 192, 0.3);
     border: 2px solid rgba(192, 192, 192, 0.7);
     border-radius: 20px;
-    padding: 40px 10px;
+    padding: 10px 10px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+span{
+    margin: 0 5px;
+    font-size: 20px;
+}
+.player{
+    color: black;
 }
