@@ -18,7 +18,7 @@ H2{
 .image{
     width: 60%;
     height: 90%;
-    background-image: url('/img/kevin.jpeg');
+    background-image: url('../img/kevin.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
