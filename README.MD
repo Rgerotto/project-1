@@ -5,8 +5,12 @@ Home Alone
 ## My projec idea
 
 add img here
+![Project game](project%20game.png)
 
 ## Backlog
+
+-put sound of it card clicked
+-transiction from page to page
 
 ## the inicial ideia was
 
@@ -21,7 +25,6 @@ add img here
 -
 -
 -
-- if i have time
 
 ## creat a game loop
 
