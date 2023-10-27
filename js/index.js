@@ -29,7 +29,7 @@ const createCard = (character) => {
 
   const front = document.createElement("div"); //creating a div with class="face front"
   front.className = "face front";
-  front.style.backgroundImage = `url(/img/${character.img})`;
+  front.style.backgroundImage = `url(../img/${character.img})`;
 
   const back = document.createElement("div"); //creating a div with class="face back"
   back.className = "face back";
@@ -80,7 +80,7 @@ const loadGame = () => {
       if (scoreNumber >= 20) {
         clearInterval(loopInterval);
         function redirect() {
-          window.location.href = "/pages/finish-game.html";
+          window.location.href = "../pages/finish-game.html";
         }
         redirect();
         return alert(`Your time is: ${timer.innerHTML}`);
