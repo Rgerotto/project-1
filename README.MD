@@ -4,7 +4,6 @@ Home Alone
 
 ## My projec idea
 
-add img here
 ![Project game](project%20game.png)
 
 ## Backlog
@@ -26,27 +25,8 @@ add img here
 -
 -
 
-## creat a game loop
+## link for presentation
 
-game loop needs to be there only if we want to make things move without the user interaction
+-https://www.canva.com/design/DAFyXhxUxwk/b5y5Ww6z_eCw7aJiT8dkTA/edit?utm_content=DAFyXhxUxwk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-javascript
-let gameLoopID
-function gameloop(){
-//update game status
-//render game
-if (!gameover){}
-gameLoopID = requestAnimationForm(gameLoop)
-}
-
-if you want certain actions to happen after a few seconds/frames, it's good to add a frameCount:
-
-javascript
-let gameLoopID;
-let frameCount = 0;
-function gameLoop(){
-rameCount++;
-if(frameCount % 100 === 0){
-addEnemy()
-}
-}
+-![link for presentation](</Home%20Alone%20Game%20(2).pptx>)

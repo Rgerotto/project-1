@@ -35,7 +35,7 @@ const createCard = (character) => {
   back.className = "face back";
   back.setAttribute("quantity", character.quantity); //set the attribute to find the quantity
   back.setAttribute("data-name", character.name); //set the atribute to find the name of it object on array
-  //console.log("quantity", character.quantity)
+
   card.appendChild(front);
   card.appendChild(back);
 
@@ -57,7 +57,6 @@ const loadGame = () => {
       eachCard.classList.add("front");
     });
   }, 700);
-  //teste
   const TimeIn = setTimeout(() => {
     document.querySelectorAll(".front").forEach((eachCard) => {
       eachCard.classList.add("back");
